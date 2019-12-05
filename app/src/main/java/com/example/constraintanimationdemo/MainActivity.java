@@ -44,22 +44,23 @@ public class MainActivity extends AppCompatActivity {
     private void showAnimation() {
         show = true;
 
-        ConstraintSet constraintSet = new ConstraintSet();
-        constraintSet.clone(this, R.layout.activity_main_animation);
+        ConstraintSet constraint1 = new ConstraintSet();
+
+        constraint1.clone(this, R.layout.activity_main_animation);
 
 
         TransitionManager.beginDelayedTransition(root);
-        constraintSet.applyTo(root);
+        constraint1.applyTo(root);
     }
 
     private void revertAnimation() {
         show = false;
 
-        ConstraintSet constraintSet = new ConstraintSet();
-        constraintSet.clone(this, R.layout.activity_main);
+        ConstraintSet constraint2 = new ConstraintSet();
+        constraint2.clone(this, R.layout.activity_main);
 
         TransitionManager.beginDelayedTransition(root);
-        constraintSet.applyTo(root);
+        constraint2.applyTo(root);
 
     }
 
